@@ -9,11 +9,14 @@ namespace Findry.Data.UnitOfWork
         public IProductRepository Products { get; }
         public ICategoryRepository Categories { get; }
 
-        public UnitOfWork(ApplicationDbContext context, IProductRepository productRepository, ICategoryRepository categories)
+        public IUserRepository Users { get; }
+
+        public UnitOfWork(ApplicationDbContext context, IProductRepository productRepository, ICategoryRepository categories,IUserRepository users)
         {
             _context = context;
             Products = productRepository;
-            Categories = categories;    
+            Categories = categories;  
+            Users = users;
         }
 
         public async Task<int> CompleteAsync()
