@@ -6,6 +6,8 @@ namespace Findry.Data.UnitOfWork
     {
         IProductRepository Products { get; }
         ICategoryRepository Categories { get; }
+        IUserRepository Users { get; }
+
         Task<int> CompleteAsync();
     }
 }
